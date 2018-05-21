@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>○○○サイト デザイン案</title>
+  <link rel="stylesheet" href="./design-page-maker.css">
+  <script src="./qrcode.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <h1>○○○サイト デザイン案</h1>
+  <div class="guidance"> サムネイルをクリックすると拡大画像をご確認いただけます。</div>
+  <div id="qrcode">
+    QRコード<br>
+    <script type="text/javascript">
+    new QRCode(document.getElementById("qrcode"), {
+      text: location.href, width: 128, height: 128
+    });
+    </script>
+  </div>
+</header>
+
+<section class="contentsCover">
+  <div class="date">2018.01.01</div>
+  <h2>デザイン案</h2>
+  <ul class="contents__list">
+    <li class="has-image">
+      <div class="caption">
+        <table>
+          <tr><td class="table__item-left">デバイス</td><td>PC</td></tr>
+          <tr>
+            <td class="table__item-left">補足</td>
+            <td>
+              <ul>
+                <li>・デザイン案の特徴を記入します</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="thumb"><a href="./detail.html?image=sample/design1.png"><img src="sample/design1.png" alt="design image 1"></a></div>
+    </li>
+    <li class="has-image">
+      <div class="caption">
+        <table>
+          <tr><td class="table__item-left">デバイス</td><td>PC</td></tr>
+          <tr>
+            <td class="table__item-left">補足</td>
+            <td>
+              <ul>
+                <li>・デザイン案の特徴を記入します</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="thumb"><a href="./detail.html?image=sample/design2.png"><img src="sample/design2.png" alt="design image 2"></a></div>
+    </li>
+    <li class="has-image">
+      <div class="caption">
+        <table>
+          <tr><td class="table__item-left">デバイス</td><td>PC</td></tr>
+          <tr>
+            <td class="table__item-left">補足</td>
+            <td>
+              <ul>
+                <li>・デザイン案の特徴を記入します</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="thumb"><a href="./detail.html?image=sample/design3.png"><img src="sample/design3.png" alt="design image 3"></a></div>
+    </li>
+  </ul>
+
+</section>
+</body>
+</html>

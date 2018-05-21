@@ -1,0 +1,24 @@
+{
+  "name": "design-page-maker",
+  "version": "0.0.1",
+  "description": "make design pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yama-dev/design-page-maker"
+  },
+  "keywords": [
+    "design"
+  ],
+  "author": "yama-dev",
+  "license": "ISC",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "opn": "^5.3.0",
+    "path": "^0.12.7"
+  },
+  "dependencies": {}
+}

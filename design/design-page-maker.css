@@ -1,0 +1,218 @@
+/* https://github.com/yama-dev/design-page-maker */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* design-page-maker */
+body {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  font-family: "游ゴシック",YuGothic,"Helvetica","ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Arial, sans-serif;
+}
+img {
+  max-width: 100%;
+}
+.contentsCover {
+  width: 100%;
+  margin: 0 auto;
+}
+a {
+  color: #666;
+  opacity: 1;
+  -webkit-transition: opacity .4s cubic-bezier(.165,.84,.44,1) 0s;
+  transition: opacity .4s cubic-bezier(.165,.84,.44,1) 0s
+}
+a:hover {
+  opacity: .6;
+  -webkit-transition: opacity .4s cubic-bezier(.165,.84,.44,1) 0s;
+  transition: opacity .4s cubic-bezier(.165,.84,.44,1) 0s
+}
+
+.header {
+  padding: 60px 0 40px 0;
+}
+.header h1 {
+  padding-bottom: 30px;
+
+  text-align: center;
+  font-size: 24px;
+}
+.header .guidance {
+  font-size: 12px;
+  text-align: center;
+  color: #fd3aa2;
+}
+.header #qrcode {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background: #fff;
+  font-size: 10px;
+  padding: 4px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  padding-bottom: 19px;
+
+  border-bottom: 1px solid #666666;
+  line-height: 1em;
+  font-size: 17px;
+  font-weight: bold;
+}
+.date {
+  position: relative;
+  font-size: 12px;
+  text-align: right;
+}
+ul.contents__list {
+  margin-bottom: 10%;
+
+  letter-spacing: -0.4em;
+  text-align: left;
+}
+ul.contents__list > li {
+  width: 30%;
+
+  display: inline-block;
+  letter-spacing: normal;
+  vertical-align: top;
+}
+ul.contents__list > li+li {
+  margin-left: 4.5%;
+}
+.caption {
+  padding: 0 0 8px 0;
+  font-size: 14px;
+  line-height:1.6em;
+  text-align:left;
+}
+.caption.is-no-tabel {
+  min-height: auto;
+}
+.caption table {
+}
+.caption table tr {
+  margin-top: 5px;
+  display: block;
+}
+.caption table .table__item-left {
+  width: 70px;
+  font-weight: bold;
+}
+.caption table tr ul li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.thumb {
+  max-height: 800px;
+  margin: 20px auto 0;
+  height: auto;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .contentsCover {
+    width: 98%;
+  }
+  img {
+    width: 100%;
+  }
+  ul.contents__list > li {
+    float: none;
+    margin-left: 0;
+  }
+  .thumb {
+    height: 600px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header #qrcode {
+    display: none;
+  }
+  .contentsCover {
+    width: 90%;
+  }
+  img {
+    width: 100%;
+  }
+  ul.contents__list {
+    margin-bottom: 5%;
+  }
+  ul.contents__list > li {
+    display: block;
+    width: 96%;
+    margin-left: 0;
+    padding: 2%;
+  }
+  ul.contents__list > li + li {
+    display: block;
+    width: 96%;
+    margin: 5% 0 0 0;
+    padding: 2%;
+  }
+  ul.contents__list > li.has-image {
+    border: 1px solid #666;
+  }
+  .caption {
+    min-height: 0;
+    font-size: 14px;
+    line-height:1.6em;
+    text-align:left;
+  }
+  .thumb {
+    height: 300px;
+    overflow: hidden;
+  }
+}
