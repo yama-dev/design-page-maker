@@ -50,6 +50,7 @@ class APP {
 
         if(stats.size > 5 * 1000 * 1000){
           console.log(fullPath + " -> 画像の容量が大きすぎます");
+          process.exit(1);
         }
 
         if(fs.statSync(fullPath).isFile() && /.*\.(jpg|png|gif)$/.test(fullPath)){
@@ -71,7 +72,10 @@ class APP {
 
     if(html){
       fs.writeFile(_dir + 'index.html', html, (error) => {
-        if(error) console.log(error);
+        if(error){
+          console.log(error);
+          process.exit(1);
+        }
       });
       fs.writeFile(_dir + 'detail.html', htmlDetail, (error) => {
         if(error) console.log(error);
@@ -84,6 +88,7 @@ class APP {
       });
     } else {
       console.log('ERROR');
+      process.exit(1);
     }
 
     // Open Browser.
