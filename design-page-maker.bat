@@ -5,6 +5,47 @@ rem | Author     : yama-dev - https://github.com/yama-dev
 rem | Repository : yama-dev - https://github.com/yama-dev/design-page-maker
 rem --------------------
 
+cd /d %~dp0
+
+echo design-page-maker.bat
+echo ====================
+echo Starting DesignPageMaker ...
+
+
+rem --------------------
+rem | Check if nodejs is installed.
+rem --------------------
+
+where node > nul 2>&1
+
+if %ERRORLEVEL% NEQ 0 goto FAILURE
+
+:SUCCESS
+echo ====================
+echo STATUS:SUCCESS
+echo   nodejs installed
+node --version
+echo ====================
+goto CHECK_NODEJS_END
+
+:FAILURE
+echo ====================
+echo STATUS:ERROR
+echo   nodejs���C���X�g�[������Ă��܂���B
+echo;
+echo nodejs��C���X�g�[�����Ă��������B
+echo ������
+echo �ynodejs�z
+echo   https://nodejs.org/en/
+echo;
+echo �ynodist�z
+echo   https://github.com/marcelklehr/nodist/releases
+echo   ��Windows�̏ꍇ�́unodist�v�𗘗p����ƃo�[�W�����Ǘ����ȒP�ł��B
+echo ====================
+cmd /k
+
+:CHECK_NODEJS_END
+
 rem --------------------
 rem | Set node files.
 rem --------------------
