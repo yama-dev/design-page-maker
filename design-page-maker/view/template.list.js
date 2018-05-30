@@ -9,6 +9,7 @@ module.exports.get = function(design, title, config){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="generator" content="@yama-dev/design-page-maker">
   <title>${config.title}</title>
   <link rel="stylesheet" href="./design-page-maker.css">
   <script src="./qrcode.min.js"></script>
