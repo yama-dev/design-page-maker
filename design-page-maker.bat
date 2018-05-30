@@ -31,36 +31,55 @@ goto CHECK_NODEJS_END
 :FAILURE
 echo ====================
 echo STATUS:ERROR
-echo   nodejsï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½B
+echo   nodejs‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
 echo;
-echo nodejsï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
-echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-echo ï¿½ynodejsï¿½z
+echo nodejs‚ðƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+echo «««
+echo ynodejsz
 echo   https://nodejs.org/en/
 echo;
-echo ï¿½ynodistï¿½z
+echo ynodistz
 echo   https://github.com/marcelklehr/nodist/releases
-echo   ï¿½ï¿½Windowsï¿½Ìê‡ï¿½Íunodistï¿½vï¿½ð—˜—pï¿½ï¿½ï¿½ï¿½Æƒoï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½È’Pï¿½Å‚ï¿½ï¿½B
+echo   ¦Windows‚Ìê‡‚Íunodistv‚ð—˜—p‚·‚é‚Æƒo[ƒWƒ‡ƒ“ŠÇ—‚ªŠÈ’P‚Å‚·B
 echo ====================
 cmd /k
 
 :CHECK_NODEJS_END
 
 rem --------------------
-rem | Set node files.
+rem | Make DesignPage.
 rem --------------------
+
+echo BOOT DesignPageMaker
+echo ====================
 
 rem ƒfƒBƒŒƒNƒgƒŠ‚ðˆÚ“®
 cd design-page-maker
 
 rem npm ŠÖ˜A‚ÌƒRƒ}ƒ“ƒh
-call npm install
+call npm install --silent
 
 rem ƒfƒBƒŒƒNƒgƒŠ‚ðˆÚ“®iƒ‹[ƒg‚Öj
 cd ..
 
 rem nodeƒtƒ@ƒCƒ‹‚ðŽÀs
-node design-page-maker/index.js
+node design-page-maker/index.js > nul 1>&2
 
-rem ƒRƒ“ƒ\[ƒ‹‚ðŠJ‚¢‚½‚Ü‚Ü‚É‚·‚é
-rem cmd /k
+if %ERRORLEVEL% NEQ 0 goto FAILURE
+
+:SUCCESS
+echo ====================
+echo SUCCESS.
+echo ====================
+goto MAKE_DESIGN_END
+
+:FAILURE
+echo ====================
+echo ERROR ...
+echo ====================
+
+:MAKE_DESIGN_END
+
+echo ‰½‚©ƒL[‚ð‰Ÿ‚·‚ÆI—¹‚µ‚Ü‚·...
+pause > NUL
+exit
