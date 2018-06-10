@@ -5,11 +5,13 @@ rem | Author     : yama-dev - https://github.com/yama-dev
 rem | Repository : yama-dev - https://github.com/yama-dev/design-page-maker
 rem --------------------
 
+set APPNAME=DesignPageMaker v0.0.3
+
 cd /d %~dp0
 
 echo design-page-maker.bat
 echo ====================
-echo Starting DesignPageMaker ...
+echo Starting %APPNAME% ...
 
 
 rem --------------------
@@ -50,7 +52,7 @@ rem --------------------
 rem | Make DesignPage.
 rem --------------------
 
-echo BOOT DesignPageMaker
+echo BOOT %APPNAME%
 echo ====================
 
 rem ディレクトリを移動
