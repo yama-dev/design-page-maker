@@ -29,17 +29,33 @@ module.exports.get = function(design, title, config){
 </header>
 `;
 
-_html += `
-<section class="contentsCover">
+let currentFolderFix = '';
+let countItem = 0;
+let countItemTotal = 0;
+for (var i = 0; i < design.length; ++i) {
+  let currentFolder = design[i] ? design[i].split('/')[0] : null;
+
+  if(currentFolderFix != currentFolder){
+    // Folder First.
+
+    currentFolderFix = currentFolder;
+    countItem = 0;
+
+    _html += `<section class="contentsCover">
   <div class="date">2018.01.01</div>
   <h2>デザイン案</h2>
 `;
 
-  for (var i = 0; i < design.length; ++i) {
-    if(i % 3 == 0){
-      _html += '  <ul class="contents__list">\n';
-    }
-    _html += `    <li class="has-image">
+  }
+
+  if(countItem % 3 == 0){
+    // Line First.
+
+    _html += '  <ul class="contents__list">\n';
+
+  }
+
+  _html += `    <li class="has-image">
       <div class="caption">
         <table>
           <tr><td class="table__item-left">デバイス</td><td>PC</td></tr>
@@ -55,19 +71,27 @@ _html += `
       </div>
       <div class="thumb"><a href="./detail.html?image=${design[i]}"><img src="${design[i]}" alt="design image ${i+1}"></a></div>
     </li>\n`;
-    if(i % 3 == 2){
-      _html += '  </ul>\n';
-    }
-  }
-  if(design.length % 3 != 0){
-    for (var i = 0; i < (3 - (design.length % 3)); ++i) {
-      _html += `<li></li>\n`;
-    }
+
+  if(countItem % 3 == 2){
+    // Line Last.
+
     _html += '  </ul>\n';
+
   }
 
+  let currentFolderNext = design[i+1] ? design[i+1].split('/')[0] : null;
+  if(currentFolderFix != currentFolderNext){
+    // Folder Last.
+    _html += `</section>`;
+  }
+
+  // Count up.
+  countItem++;
+  countItemTotal++;
+
+}
+
 _html += `
-</section>
 </body>
 </html>
 `;
